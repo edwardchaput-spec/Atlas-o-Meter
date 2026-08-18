@@ -1,8 +1,6 @@
 # Atlas-o-meter
 
-Atlas-o-meter is a private, shared behaviour calendar and star reward tracker for Edward and Lisa. It is designed for Android phones, can be installed as a home-screen app, and stores both users' changes in one SQLite database.
-
-Edward signs in with Google OpenID Connect against one fixed, server-configured email. Lisa signs in with an Atlas-specific password that an authenticated Edward sets in Settings; there is no default password and Lisa has no Google path. After initial authentication, either person can register a passkey and use Android's fingerprint, face, screen lock, or saved passkey on later visits. Edward falls back to Google and Lisa falls back to her Atlas password when phone unlock is unavailable. Biometric data stays with the authenticator; Atlas-o-meter stores only the passkey's public credential.
+Atlas-o-meter is a private, shared behaviour calendar and star reward tracker for me and the wife. It is designed for Android phones, can be installed as a home-screen app, and stores both users' changes in one SQLite database.
 
 The two personalised mood portraits are generated illustration derivatives. The source family photos are not copied into the repository. The WebP files live outside `public/` and are delivered only to an authenticated session through a private, `no-store` API response.
 
@@ -47,7 +45,7 @@ GOOGLE_CLIENT_ID=<Google-Web-client-ID>
 GOOGLE_CLIENT_SECRET=<Google-Web-client-secret>
 ```
 
-Create a Google **Web application** OAuth client with `http://localhost:3000` as an authorised JavaScript origin and `http://localhost:3000/api/auth/google/callback` as an authorised redirect URI. Open <http://localhost:3000>, choose Edward, and continue with his configured Google account. In Edward's Settings, set Lisa's 12–128-character Atlas password; do not use or enter her Gmail password. Lisa can then sign in with that password and enrol phone unlock. Local passkey testing uses `localhost`, which browsers treat as a secure development context.
+Create a Google **Web application** OAuth client with `http://localhost:3000` as an authorised JavaScript origin and `http://localhost:3000/api/auth/google/callback` as an authorised redirect URI.
 
 Replace the example `SESSION_SECRET` with at least 32 random characters before relying on sessions. `openssl rand -base64 32` can generate one. The database defaults to `./data/atlas.db`; its directory and schema are created on first use. Local database and environment files are ignored by Git.
 
