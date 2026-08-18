@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Atlas-o-meter star compass">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#245b57"/>
+      <stop offset="1" stop-color="#123331"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe099"/>
+      <stop offset="1" stop-color="#efb84d"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="153" fill="none" stroke="#6aa79d" stroke-width="14" opacity=".65"/>
+  <circle cx="256" cy="256" r="119" fill="#fbf8f0" opacity=".08"/>
+  <path d="M256 108l35 99 105 4-83 64 28 102-85-59-85 59 28-102-83-64 105-4z" fill="url(#gold)" stroke="#fff1c9" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="35" fill="#183b3a"/>
+  <path d="M256 231l8 17 19 3-14 13 4 19-17-9-17 9 4-19-14-13 19-3z" fill="#fff5d8"/>
+</svg>

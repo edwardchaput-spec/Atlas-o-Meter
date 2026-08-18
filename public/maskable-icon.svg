@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Atlas-o-meter star">
+  <rect width="512" height="512" fill="#183b3a"/>
+  <circle cx="256" cy="256" r="180" fill="#245b57"/>
+  <circle cx="256" cy="256" r="142" fill="none" stroke="#73aca3" stroke-width="14"/>
+  <path d="M256 120l33 93 99 4-78 60 26 96-80-56-80 56 26-96-78-60 99-4z" fill="#f4c865" stroke="#fff1c9" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="33" fill="#183b3a"/>
+</svg>

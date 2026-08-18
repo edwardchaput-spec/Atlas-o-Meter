@@ -1,0 +1,12 @@
+services:
+  app:
+    networks:
+      default:
+      npm_proxy:
+        aliases:
+          - atlas-o-meter-app
+
+networks:
+  npm_proxy:
+    external: true
+    name: ${NPM_NETWORK:?Set NPM_NETWORK to Nginx Proxy Manager's Docker network}

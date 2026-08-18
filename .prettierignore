@@ -1,0 +1,6 @@
+.next
+coverage
+data
+atlas-backups
+node_modules
+pnpm-lock.yaml

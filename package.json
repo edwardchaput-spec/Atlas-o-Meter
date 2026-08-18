@@ -1,0 +1,47 @@
+{
+  "name": "atlas-o-meter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A shared family behaviour calendar and star reward tracker.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "backup": "node scripts/backup-db.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "13.3.0",
+    "@simplewebauthn/server": "13.3.2",
+    "better-sqlite3": "13.0.3",
+    "date-fns": "4.4.0",
+    "lucide-react": "1.30.0",
+    "next": "16.3.0",
+    "openid-client": "6.8.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "@types/node": "26.0.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.0",
+    "prettier": "3.9.6",
+    "sharp": "0.35.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  },
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}
