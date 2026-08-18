@@ -1,0 +1,50 @@
+name: atlas-o-meter
+
+services:
+  app:
+    image: atlas-o-meter:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      NODE_ENV: production
+      DATABASE_PATH: /data/atlas.db
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env before starting Atlas-o-meter}
+      APP_ORIGIN: ${APP_ORIGIN:-https://atlas.burtonsvilla.com}
+      WEBAUTHN_ORIGIN: ${WEBAUTHN_ORIGIN:-https://atlas.burtonsvilla.com}
+      WEBAUTHN_RP_ID: ${WEBAUTHN_RP_ID:-atlas.burtonsvilla.com}
+      SMS_PROVIDER: ${SMS_PROVIDER:-twilio}
+      DEV_SMS_CODE: ${DEV_SMS_CODE:-}
+      TWILIO_VERIFY_SERVICE_SID: ${TWILIO_VERIFY_SERVICE_SID:-}
+      TWILIO_API_KEY_SID: ${TWILIO_API_KEY_SID:-}
+      TWILIO_API_KEY_SECRET: ${TWILIO_API_KEY_SECRET:-}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID:-}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN:-}
+      ATLAS_EDWARD_PHONE_E164: ${ATLAS_EDWARD_PHONE_E164:-}
+      ATLAS_LISA_PHONE_E164: ${ATLAS_LISA_PHONE_E164:-}
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - atlas_data:/data
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - >-
+          fetch('http://127.0.0.1:3000/api/health/ready').then((response) =>
+          process.exit(response.ok ? 0 : 1)).catch(() => process.exit(1))
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  atlas_data:
