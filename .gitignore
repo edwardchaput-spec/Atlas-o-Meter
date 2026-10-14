@@ -11,6 +11,8 @@ coverage/
 # local data and secrets
 data/
 atlas-backups/
+docs/deployment.md
+docker-compose.yml.pre-production
 .env
 .env.local
 .env.*.local
